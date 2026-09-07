@@ -8,7 +8,7 @@ import { Header } from './layout/header';
   template: `
     <app-header />
 
-    <main class="pl-8 pb-8 max-w-[1200px]">
+    <main class="px-8 md:pr-0 pb-8 max-w-[1200px]">
       <router-outlet />
     </main>
 
