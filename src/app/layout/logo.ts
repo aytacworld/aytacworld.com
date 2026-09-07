@@ -12,11 +12,10 @@ const Sizes = {
 @Component({
   selector: 'logo',
   template: `
-    <img ngSrc="./banner-new.svg"
+    <img ngSrc="./banner-{{invert() ? 'invert' : 'default'}}.svg"
         priority [width]="s()[0]" [height]="s()[1]"
         [routerLink]="link()"
         class="cursor-pointer"
-        [class.invert-50]="invert()"
     />
   `,
   imports: [RouterLink, NgOptimizedImage],
