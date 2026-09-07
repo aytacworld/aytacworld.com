@@ -45,8 +45,7 @@ import { NavItem } from './nav-item';
       'justify-between',
       'items-center',
       'p-[.5rem]',
-      'md:p-4',
-      'md:pl-8',
+      'pl-8',
     ]`,
   },
 })
