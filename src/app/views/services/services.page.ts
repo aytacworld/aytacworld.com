@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Page } from '../../core/page';
 
 @Component({
   selector: 'services-page',
@@ -7,4 +8,4 @@ import { Component } from '@angular/core';
   `,
   imports: [],
 })
-export class ServicesPage {}
+export class ServicesPage extends Page {}

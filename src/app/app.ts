@@ -6,18 +6,25 @@ import { Header } from './layout/header';
 @Component({
   selector: 'app-root',
   template: `
-    <app-header />
+    <div class="flex justify-center">
+       <app-header class="max-w-[1280px]" />
+    </div>
 
-    <main class="px-8 md:pr-0 pb-8 max-w-[1200px]">
-      <router-outlet />
-    </main>
+    <div class="flex justify-center">
+      <main class="px-8 md:pr-0 pb-8 max-w-[1280px] w-full">
+        <router-outlet />
+      </main>
+    </div>
 
-    <app-footer class="grow" />
+    <div class="grow flex justify-center bg-primary-400">
+      <app-footer class="max-w-[1280px]" />
+    </div>
   `,
   imports: [RouterOutlet, Header, Footer],
   host: {
     '[class]': `[
       'h-screen',
+      'w-screen',
       'flex',
       'flex-col',
     ]`,

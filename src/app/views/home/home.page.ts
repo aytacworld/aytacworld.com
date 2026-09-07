@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Page } from '../../core/page';
 
 @Component({
   selector: 'home-page',
@@ -12,4 +13,4 @@ import { Component } from '@angular/core';
   `,
   imports: [],
 })
-export class HomePage {}
+export class HomePage extends Page {}

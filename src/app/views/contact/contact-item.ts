@@ -14,19 +14,19 @@ export type ContactItemType = 'mail' | 'phone' | 'office';
     </div>
     <div class="flex flex-col">
       <span class="font-bold capitalize">{{ type() }}</span>
-      <a class="text-underline text-primary-400" [href]="hrefValue()">{{ value() }}</a>
+      <a class="text-underline text-primary-400"
+        [href]="hrefValue()"
+        target="_blank"
+      >{{ value() }}</a>
     </div>
   `,
   imports: [Icon],
-  host: {
-    '[class]': `[
-      'flex',
-    ]`,
-  },
+  host: { '[class]': `['flex']` },
 })
 export class ContactItem {
   public type = input<ContactItemType>('mail');
   public value = input.required<string>();
+  public href = input<string>();
 
   protected icon = computed(() => {
     const t = this.type();
@@ -37,7 +37,9 @@ export class ContactItem {
     return mdiEmailOutline;
   });
 
- protected hrefValue = computed(() => {
+  protected hrefValue = computed(() => {
+    if (this.href()) return this.href();
+
     const t = this.type();
     const v = this.value();
 

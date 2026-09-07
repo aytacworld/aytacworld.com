@@ -23,15 +23,13 @@ import { logo } from './logo';
       <div class="text-center md:text-left md:pl-[3rem] flex flex-col gap-2 mt-[1.5rem] md:mt-0">
         <b class="pb-2">Company</b>
         <a routerLink="/about">About</a>
-        <a routerLink="/about" fragment="team">Team</a>
         <a routerLink="/contact">Contact</a>
       </div>
 
       <div class="text-center md:text-left md:pl-[3rem] flex flex-col gap-2 mt-[1.5rem] md:mt-0">
         <b class="pb-2">Contact</b>
         <a href="mailto:info@aytacworld.com">info@aytacworld.com</a>
-        <a href="tel:+32xxxxxxxxx">+32 xxx xx xx xx</a>
-        <a href="geo:Brussel, Belgium">Brussel, BE</a>
+        <a href="https://osm.org/go/0EoZds5YE--?m=">Artur Maesstraat 100/307, 1130 Brussel, BE</a>
       </div>
     </div>
 
@@ -44,7 +42,6 @@ import { logo } from './logo';
   imports: [logo, RouterLink],
   host: {
     '[class]': `[
-      'bg-primary-400',
       'text-white',
       'px-8',
       'py-6',
