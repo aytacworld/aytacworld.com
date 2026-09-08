@@ -39,13 +39,16 @@ import { NavItem } from './nav-item';
   imports: [Button, NavItem, Icon, logo],
   host: {
     '[class]': `[
-      'static',
       'w-full',
       'flex',
       'justify-between',
       'items-center',
       'p-[.5rem]',
       'pl-8',
+      'bg-white',
+      menuToggle() ? 'fixed' : 'static',
+      menuToggle() ? 'z-999' : '',
+      'md:static',
     ]`,
   },
 })
