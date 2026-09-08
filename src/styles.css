@@ -25,6 +25,13 @@
   h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
     border-left-color: var(--color-primary-500);
   }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    display: block;
+    color: var(--color-primary-400);
+    font-size: .75rem;
+    text-transform: capitilize;
+    padding-bottom: .75rem;
+  }
   h1 {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));

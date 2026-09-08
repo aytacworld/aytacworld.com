@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { booleanAttribute, Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'btn',
@@ -7,7 +7,7 @@ import { Component, input, output } from '@angular/core';
     '(click)': 'onClick.emit($event)',
     '[class]': `[
       'text-center',
-      'block',
+      small() ? 'inline-block' : 'block',
       'bg-primary-400',
       'hover:bg-primary-500',
       'active:bg-primary-600',
@@ -23,5 +23,6 @@ import { Component, input, output } from '@angular/core';
 })
 export class Button {
   public type = input<string>();
+  public small = input(false, { transform: booleanAttribute });
   public onClick = output<MouseEvent>();
 }
