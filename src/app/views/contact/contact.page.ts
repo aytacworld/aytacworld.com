@@ -1,5 +1,5 @@
-import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
+import { Placeholder } from '../../components/placeholder';
 import { Page } from '../../core/page';
 import { ContactForm } from './contact.form';
 import { ContactItem, type ContactItemType } from './contact-item';
@@ -18,7 +18,7 @@ import { ContactItem, type ContactItemType } from './contact-item';
 
     <div class="grow flex flex-col">
       <div class="relative grow hidden md:block">
-        <img ngSrc="./contact-ai.jpeg" priority fill />
+        <placeholder fill />
       </div>
       <div class="flex flex-col md:flex-row mt-[1.5rem] gap-[1.5rem]">
         <div class="flex flex-col grow gap-4">
@@ -31,7 +31,7 @@ import { ContactItem, type ContactItemType } from './contact-item';
 
     </div>
   `,
-  imports: [ContactForm, NgOptimizedImage, ContactItem],
+  imports: [ContactForm, ContactItem, Placeholder],
   host: {
     '[class]': `[
       'flex',
