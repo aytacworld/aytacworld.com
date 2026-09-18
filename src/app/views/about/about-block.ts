@@ -1,5 +1,5 @@
 import { booleanAttribute, Component, input } from '@angular/core';
-import { Placeholder } from '../../components/placeholder';
+import { type ImgType, Placeholder } from '../../components/placeholder';
 
 @Component({
   selector: 'a-block',
@@ -17,7 +17,8 @@ import { Placeholder } from '../../components/placeholder';
       <ng-content select="[action]" />
     </div>
 
-    <placeholder class="hidden md:block" [width]="imageWidth()" rounded />
+    <placeholder class="hidden md:block" [width]="imageWidth()" rounded
+                 [img]="imageType()" />
   `,
   imports: [Placeholder],
   host: {
@@ -37,4 +38,5 @@ export class AboutBlock {
   public sub = input('Aytacworld');
   public title = input.required<string>();
   public imageWidth = input(700);
+  public imageType = input<ImgType>('1');
 }

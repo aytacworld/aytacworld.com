@@ -7,7 +7,7 @@ import { AboutBlock } from './about-block';
 @Component({
   selector: 'about-page',
   template: `
-    <a-block title="Technology built around your ambition">
+    <a-block title="Technology built around your ambition" imageType="2">
       <p class="mb-[1.5rem]">
         We help organizations plan, build, and scale impactful digital
         products and platforms that drive growth, efficiency, and lasting
@@ -16,7 +16,8 @@ import { AboutBlock } from './about-block';
       <btn action small routerLink="/contact">Work with us</btn>
     </a-block>
 
-    <a-block title="Turning complex ideas into confident outcomes" sub="us" left [imageWidth]="600">
+    <a-block title="Turning complex ideas into confident outcomes"
+             sub="us" left [imageWidth]="600" imageType="3">
       <p>
         Aytacworld is an IT consultancy and project development partner for
         forward-thinking organizations. We combine deep industry expertise

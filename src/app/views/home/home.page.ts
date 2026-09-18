@@ -9,7 +9,7 @@ import { Page } from '../../core/page';
   template: `
     <h1 big>Your partner for software solutions</h1>
     <div class="relative h-[10rem] md:h-[25rem]">
-      <placeholder fill rounded />
+      <placeholder fill rounded img="4" />
     </div>
     <div class="mt-8 md:mx-24">
       <p>

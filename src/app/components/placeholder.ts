@@ -1,10 +1,12 @@
 import { NgOptimizedImage } from '@angular/common';
 import { booleanAttribute, Component, effect, input, signal } from '@angular/core';
 
+export type ImgType = '1' | '2' | '3' | '4';
+
 @Component({
   selector: 'placeholder',
   template: `
-    <img ngSrc="/placeholder.jpeg" priority
+    <img ngSrc="/placeholder-{{img()}}.jpeg" priority
       [width]="w() || undefined"
       [height]="h() || undefined"
       [fill]="f() || undefined"
@@ -17,6 +19,7 @@ export class Placeholder {
   public width = input<number>();
   public fill = input(false, { transform: booleanAttribute });
   public rounded = input(false, { transform: booleanAttribute });
+  public img = input<ImgType>('1');
 
   protected w = signal<number>(0);
   protected h = signal<number>(0);
