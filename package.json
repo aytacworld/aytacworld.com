@@ -19,7 +19,9 @@
     "@angular/platform-browser": "^22.1.0",
     "@angular/router": "^22.1.0",
     "@mdi/js": "^7.4.47",
+    "express": "^5.2.1",
     "rxjs": "~7.8.0",
+    "serverless-http": "^4.0.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
@@ -28,6 +30,7 @@
     "@angular/compiler-cli": "^22.1.0",
     "@biomejs/biome": "2.5.11",
     "@tailwindcss/postcss": "^4.1.12",
+    "@types/express": "^5.0.6",
     "jsdom": "^28.0.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.12",
