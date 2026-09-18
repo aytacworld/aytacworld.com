@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { mdiClose, mdiMenu } from '@mdi/js';
-import { Button } from '../components/button';
 import { Icon } from '../components/icon';
 import { logo } from './logo';
 import { NavItem } from './nav-item';
@@ -11,10 +10,9 @@ import { NavItem } from './nav-item';
     <logo />
     <div class="hidden md:block">
       <nav class="flex gap-8">
+        <nav-item name="home" />
         <nav-item name="about" />
-        <nav-item name="services" />
         <nav-item name="contact" />
-        <btn (onClick)="book()">Book a consultation</btn>
       </nav>
     </div>
     <div class="md:hidden">
@@ -26,17 +24,16 @@ import { NavItem } from './nav-item';
       @if (menuToggle()) {
         <div class="absolute left-0 top-[52px] h-[calc(100vh-52px)] w-full bg-white z-999">
           <nav class="flex flex-col gap-6 p-6 pt-6 h-full">
+            <nav-item name="home" (click)="menuToggle.set(false)" />
             <nav-item name="about" (click)="menuToggle.set(false)" />
-            <nav-item name="services" (click)="menuToggle.set(false)" />
             <nav-item name="contact" (click)="menuToggle.set(false)" />
-            <btn (onClick)="book()">Book a consultation</btn>
             <div class="grow" ></div>
           </nav>
         </div>
       }
     </div>
     `,
-  imports: [Button, NavItem, Icon, logo],
+  imports: [NavItem, Icon, logo],
   host: {
     '[class]': `[
       'w-full',
@@ -57,9 +54,4 @@ export class Header {
   protected readonly mdiMenu = mdiMenu;
 
   protected menuToggle = signal(false);
-
-  protected book(): void {
-    this.menuToggle.set(false);
-    console.log('hello');
-  }
 }

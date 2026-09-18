@@ -14,13 +14,7 @@ import { logo } from './logo';
         </p>
       </div>
 
-      <div class="text-center md:text-left md:pl-[3rem] flex flex-col gap-2 mt-[1.5rem] md:mt-0">
-        <b class="pb-2">Services</b>
-        <a routerLink="services" fragment="consulting">Consulting</a>
-        <a routerLink="services" fragment="project">Project</a>
-      </div>
-
-      <div class="text-center md:text-left md:pl-[3rem] flex flex-col gap-2 mt-[1.5rem] md:mt-0">
+      <div class="md:col-start-4 text-center md:text-left md:pl-[3rem] flex flex-col gap-2 mt-[1.5rem] md:mt-0">
         <b class="pb-2">Company</b>
         <a routerLink="/about">About</a>
         <a routerLink="/contact">Contact</a>
