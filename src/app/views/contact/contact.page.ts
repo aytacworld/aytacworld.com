@@ -24,6 +24,7 @@ import { ContactItem, type ContactItemType } from './contact-item';
         <div class="flex flex-col grow gap-4">
           <contact-item [type]="c[0][0]" [value]="c[0][1]" />
           <contact-item [type]="c[1][0]" [value]="c[1][1]" [href]="c[1][2]" />
+          <contact-item [type]="c[2][0]" [value]="c[2][1]" />
         </div>
         <iframe class="w-full h-[200px] md:w-[400px]"
           src="https://www.openstreetmap.org/export/embed?bbox=4.423397183418275%2C50.88294708155157%2C4.428171515464784%2C50.88720790619238&amp;layer=mapnik&amp;marker=50.88507754258277%2C4.425784349441528"></iframe>
@@ -45,5 +46,6 @@ export class ContactPage extends Page {
   protected c: Array<[ContactItemType, string, string?]> = [
     ['mail', 'info@aytacworld.com'],
     ['office', 'Arthur Maestraat 100/307, 1130 Brussel, BE', 'https://osm.org/go/0EoZds5YE--?m='],
+    ['vat', 'BE0785.854.606'],
   ];
 }

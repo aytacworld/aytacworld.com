@@ -1,8 +1,8 @@
 import { Component, computed, input } from '@angular/core';
-import { mdiEmailOutline, mdiMapMarkerOutline, mdiPhoneOutline } from '@mdi/js';
+import { mdiDomain, mdiEmailOutline, mdiMapMarkerOutline, mdiPhoneOutline } from '@mdi/js';
 import { Icon } from '../../components/icon';
 
-export type ContactItemType = 'mail' | 'phone' | 'office';
+export type ContactItemType = 'mail' | 'phone' | 'office' | 'vat';
 
 @Component({
   selector: 'contact-item',
@@ -14,10 +14,11 @@ export type ContactItemType = 'mail' | 'phone' | 'office';
     </div>
     <div class="flex flex-col">
       <span class="font-bold capitalize">{{ type() }}</span>
-      <a class="text-underline text-primary-400"
-        [href]="hrefValue()"
-        target="_blank"
-      >{{ value() }}</a>
+      @if (hrefValue(); as v) {
+        <a class="text-primary-400" [href]="v" target="_blank">{{value()}}</a>
+      } @else {
+        <span class="text-primary-400">{{value()}}</span>
+      }
     </div>
   `,
   imports: [Icon],
@@ -33,6 +34,7 @@ export class ContactItem {
 
     if (t === 'phone') return mdiPhoneOutline;
     if (t === 'office') return mdiMapMarkerOutline;
+    if (t === 'vat') return mdiDomain;
 
     return mdiEmailOutline;
   });
@@ -45,6 +47,7 @@ export class ContactItem {
 
     if (t === 'phone') return `tel:${v}`;
     if (t === 'office') return `geo:${v}`;
+    if (t === 'vat') return ``;
 
     return `mailto:${v}`;
   });

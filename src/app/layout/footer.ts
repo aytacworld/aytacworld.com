@@ -29,7 +29,8 @@ import { logo } from './logo';
       <div class="text-center md:text-left md:pl-[3rem] flex flex-col gap-2 mt-[1.5rem] md:mt-0">
         <b class="pb-2">Contact</b>
         <a href="mailto:info@aytacworld.com">info@aytacworld.com</a>
-        <a href="https://osm.org/go/0EoZds5YE--?m=">Artur Maesstraat 100/307, 1130 Brussel, BE</a>
+        <a href="https://osm.org/go/0EoZds5YE--?m=">Artur Maesstraat 100/307, 1130 Brussel, Belgium</a>
+        <span>BE0785.854.606</span>
       </div>
     </div>
 
