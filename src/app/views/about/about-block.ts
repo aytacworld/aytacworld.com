@@ -4,7 +4,7 @@ import { Placeholder } from '../../components/placeholder';
 @Component({
   selector: 'a-block',
   template: `
-    <div class="md:max-w-[400px]">
+    <div class="md:max-w-[400px] xl:max-w-[550px]">
       <h1>
         <span>
           <small>{{ prefix() }} {{ sub() }}</small>

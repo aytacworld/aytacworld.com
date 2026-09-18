@@ -1,5 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { booleanAttribute, Component, computed, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 type LogoSize = 'sm' | 'md' | 'lg';
 const Sizes = {
@@ -13,11 +14,14 @@ const Sizes = {
   template: `
     <img ngSrc="./banner-{{invert() ? 'invert' : 'default'}}.svg"
         priority [width]="s()[0]" [height]="s()[1]"
+        [routerLink]="link()"
+        class="cursor-pointer"
     />
   `,
-  imports: [NgOptimizedImage],
+  imports: [RouterLink, NgOptimizedImage],
 })
 export class logo {
+  public link = input('');
   public invert = input(false, { transform: booleanAttribute });
   public size = input<LogoSize>('sm');
 

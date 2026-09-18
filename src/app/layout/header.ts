@@ -10,7 +10,6 @@ import { NavItem } from './nav-item';
     <logo />
     <div class="hidden md:block">
       <nav class="flex gap-8">
-        <nav-item name="home" />
         <nav-item name="about" />
         <nav-item name="contact" />
       </nav>
@@ -24,7 +23,6 @@ import { NavItem } from './nav-item';
       @if (menuToggle()) {
         <div class="absolute left-0 top-[52px] h-[calc(100vh-52px)] w-full bg-white z-999">
           <nav class="flex flex-col gap-6 p-6 pt-6 h-full">
-            <nav-item name="home" (click)="menuToggle.set(false)" />
             <nav-item name="about" (click)="menuToggle.set(false)" />
             <nav-item name="contact" (click)="menuToggle.set(false)" />
             <div class="grow" ></div>
