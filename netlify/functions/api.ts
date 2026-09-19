@@ -8,7 +8,11 @@ app.use(express.json());
 // const router = Router();
 // router.get('/hello', (req, res) => res.send('hello world'));
 
-app.put('contact', (req: Request, res: Response) => {
+app.get('/hello', (req: Request, res: Response) => {
+  res.send('Hello world');
+});
+
+app.put('/contact', (req: Request, res: Response) => {
   res.json({
     query: req.query,
     body: req.body,
