@@ -49,6 +49,7 @@ export class ContactForm {
   });
 
   protected send(): void {
+    this.form().markAsTouched();
     if (this.form().invalid()) return;
 
     console.log(this.model());
