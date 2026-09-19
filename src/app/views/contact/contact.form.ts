@@ -1,10 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { email, FormField, form, required } from '@angular/forms/signals';
+import type { ContactData } from '../../../../types/contact-data.model';
 import { Box } from '../../components/box';
 import { Button } from '../../components/button';
 import { Field } from '../../components/field';
 import { ApiService } from '../../services/api.service';
-import type { ContactData } from '../../types/contact-data.model';
 
 @Component({
   selector: 'contact-form',

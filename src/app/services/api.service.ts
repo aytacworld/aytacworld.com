@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import type { Observable } from 'rxjs';
-import type { ContactData } from '../types/contact-data.model';
+import type { ContactData } from '../../../types/contact-data.model';
 
 type PutContactResponse = any;
 

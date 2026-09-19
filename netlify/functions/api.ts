@@ -3,7 +3,7 @@ import express, { type Request, type Response, Router } from 'express';
 import { body } from 'express-validator';
 import helmet from 'helmet';
 import serverless from 'serverless-http';
-import mail from './mail';
+import mail from '../../server/mail';
 
 const app = express();
 
