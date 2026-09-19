@@ -1,22 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { email, FormField, form, required } from '@angular/forms/signals';
 import { Box } from '../../components/box';
 import { Button } from '../../components/button';
 import { Field } from '../../components/field';
-
-interface ContactData {
-  name: string;
-  email: string;
-  company: string;
-  message: string;
-}
-
-const model = signal<ContactData>({
-  name: '',
-  email: '',
-  company: '',
-  message: '',
-});
+import { ApiService } from '../../services/api.service';
+import type { ContactData } from '../../types/contact-data.model';
 
 @Component({
   selector: 'contact-form',
@@ -34,6 +22,8 @@ const model = signal<ContactData>({
   imports: [Box, Field, Button, FormField],
 })
 export class ContactForm {
+  private readonly api = inject(ApiService);
+
   protected model = signal<ContactData>({
     name: '',
     email: '',
@@ -41,7 +31,7 @@ export class ContactForm {
     message: '',
   });
 
-  protected form = form(model, (schemaPath) => {
+  protected form = form(this.model, (schemaPath) => {
     required(schemaPath.name, { message: 'Name is required' });
     required(schemaPath.email, { message: 'Email is required' });
     email(schemaPath.email, { message: 'Email is incorrect' });
@@ -52,6 +42,13 @@ export class ContactForm {
     this.form().markAsTouched();
     if (this.form().invalid()) return;
 
-    console.log(this.model());
+    this.api.putContact(this.model()).subscribe({
+      next: (res)=> {
+        console.log('hello', res);
+      },
+      error: (err) => {
+        console.error('err', err);
+      },
+    });
   }
 }

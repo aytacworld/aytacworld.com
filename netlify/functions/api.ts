@@ -1,11 +1,14 @@
-import express, { type Request, type Response } from 'express';
+import express, { type Request, type Response, Router } from 'express';
 import serverless from 'serverless-http';
 
 const app = express();
 
 app.use(express.json());
 
-app.put('contact', (req: Request, res: Response) => {
+const router = Router();
+router.get('/hello', (req, res) => res.send('hello world'));
+
+router.put('contact', (req: Request, res: Response) => {
   res.json({
     query: req.query,
     body: req.body,
@@ -13,5 +16,7 @@ app.put('contact', (req: Request, res: Response) => {
     message: 'hello world',
   });
 });
+
+app.use('/api/', router);
 
 export const handler = serverless(app);
