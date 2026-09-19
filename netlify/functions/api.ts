@@ -5,10 +5,10 @@ const app = express();
 
 app.use(express.json());
 
-const router = Router();
-router.get('/hello', (req, res) => res.send('hello world'));
+// const router = Router();
+// router.get('/hello', (req, res) => res.send('hello world'));
 
-router.put('contact', (req: Request, res: Response) => {
+app.put('contact', (req: Request, res: Response) => {
   res.json({
     query: req.query,
     body: req.body,
@@ -17,6 +17,6 @@ router.put('contact', (req: Request, res: Response) => {
   });
 });
 
-app.use('/api/', router);
+// app.use('/api/', router);
 
 export const handler = serverless(app);
