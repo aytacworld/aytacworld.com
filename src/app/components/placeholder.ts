@@ -6,7 +6,9 @@ export type ImgType = '1' | '2' | '3' | '4';
 @Component({
   selector: 'placeholder',
   template: `
-    <img ngSrc="/placeholder-{{img()}}.jpeg" priority
+    <img
+      class="object-cover"
+      ngSrc="/placeholder-{{img()}}.jpeg" priority
       [width]="w() || undefined"
       [height]="h() || undefined"
       [fill]="f() || undefined"
