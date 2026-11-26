@@ -26,7 +26,7 @@ import { logo } from './logo';
         <b class="pb-2">Contact</b>
         <a href="mailto:info@aytacworld.com">info@aytacworld.com</a>
         <a href="https://osm.org/go/0EoZds5YE--?m=">
-          Artur Maesstraat 100/307, 1130 Brussel, Belgium
+          Arthur Maesstraat 100/307, 1130 Brussel, Belgium
         </a>
         <span>BE0785.854.606</span>
       </div>
